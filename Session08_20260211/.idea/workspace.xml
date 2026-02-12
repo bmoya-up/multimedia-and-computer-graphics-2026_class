@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="525aa91d-7b86-401f-9135-417e1e682f39" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Session04/Session04_20260129/clock.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Session04/Session04_20260129/clock.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session04/Session04_20260129/src/edu/up/cg/images/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Session04/Session04_20260129/src/edu/up/cg/images/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session06_20260205/src/edu/up/cg/barycentric/Barycentric.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Session06_20260205/src/edu/up/cg/barycentric/Barycentric.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session06_20260205/src/edu/up/cg/barycentric/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Session06_20260205/src/edu/up/cg/barycentric/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session06_20260205/src/edu/up/cg/barycentric/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Session06_20260205/src/edu/up/cg/barycentric/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session06_20260205/src/edu/up/cg/barycentric/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Session06_20260205/src/edu/up/cg/barycentric/Triangle.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;bmoya-up&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/bmoya-up/multimedia-and-computer-graphics-2026.git&quot;,
+    &quot;accountId&quot;: &quot;a63b432a-457e-4088-aa70-00e6f0a2aeff&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="39YH9Y8idO77gCN9WUO7ZaJclIF" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/bmoya/Documents/Clases/Multimedia_CG/CG_2026-2/Code/Session08_20260211/src/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.language&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-cffe25b9f5b3-intellij.indexing.shared.core-IU-253.28294.334" />
+        <option value="bundled-js-predefined-d6986cc7102b-c7e53b3be11b-JavaScript-IU-253.28294.334" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="525aa91d-7b86-401f-9135-417e1e682f39" name="Changes" comment="" />
+      <created>1770865936209</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1770865936209</updated>
+      <workItem from="1770865940322" duration="442000" />
+      <workItem from="1770866397273" duration="37000" />
+      <workItem from="1770866452451" duration="658000" />
+      <workItem from="1770867123808" duration="60000" />
+      <workItem from="1770867197744" duration="96000" />
+      <workItem from="1770867308635" duration="590000" />
+      <workItem from="1770867916690" duration="2984000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>
