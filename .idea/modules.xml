@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Public Code.iml" filepath="$PROJECT_DIR$/.idea/Public Code.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Session02/Session02.iml" filepath="$PROJECT_DIR$/Session02/Session02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Session03/Session03.iml" filepath="$PROJECT_DIR$/Session03/Session03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Session05_20260203/Session05_20260203.iml" filepath="$PROJECT_DIR$/Session05_20260203/Session05_20260203.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Session06_20260205/Session06_20260205.iml" filepath="$PROJECT_DIR$/Session06_20260205/Session06_20260205.iml" />
+    </modules>
+  </component>
+</project>
