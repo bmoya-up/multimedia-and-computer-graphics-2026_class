@@ -1,12 +1,13 @@
 package edu.up.cg.raytracer.objects;
 
+import edu.up.cg.raytracer.tools.IIntersectable;
 import edu.up.cg.raytracer.tools.Intersection;
 import edu.up.cg.raytracer.tools.Ray;
 import edu.up.cg.raytracer.tools.Vector3D;
 
 import java.awt.*;
 
-public abstract class Object3D {
+public abstract class Object3D implements IIntersectable {
     private Color color;
     private Vector3D position;
 
@@ -30,6 +31,4 @@ public abstract class Object3D {
     public void setPosition(Vector3D position) {
         this.position = position;
     }
-
-    public abstract Intersection getIntersection(Ray ray);
 }

@@ -1,8 +1,6 @@
 package edu.up.cg.raytracer;
 
-import edu.up.cg.raytracer.objects.Camera;
-import edu.up.cg.raytracer.objects.Object3D;
-import edu.up.cg.raytracer.objects.Sphere;
+import edu.up.cg.raytracer.objects.*;
 import edu.up.cg.raytracer.tools.Intersection;
 import edu.up.cg.raytracer.tools.Ray;
 import edu.up.cg.raytracer.tools.Vector3D;
@@ -17,10 +15,17 @@ import java.util.List;
 
 public class Raytracer {
     public static void main(String[] args) {
+        System.out.println(new Date());
         Scene scene01 = new Scene(Color.WHITE);
-        scene01.setCamera(new Camera(new Vector3D(0, 0, -4), 60, 60, 800,800));
+//        scene01.setCamera(new Camera(new Vector3D(0, 0, -4), 60, 60, 800,800, 9.7, 20.0));
+        scene01.setCamera(new Camera(new Vector3D(0, 0, -4), 60, 60, 800,800, 0.6, 50.0));
         scene01.addObject(new Sphere(new Vector3D(0.5, 1, 8), 0.8, Color.RED));
         scene01.addObject(new Sphere(new Vector3D(0.1, 1, 6), 0.5, Color.BLUE));
+        scene01.addObject(new Model3D(new Vector3D(-1, -1, 3),
+                new Triangle[]{
+                        new Triangle(Vector3D.ZERO(), new Vector3D(1, 0, 0), new Vector3D(1,-1,0)),
+                        new Triangle(Vector3D.ZERO(), new Vector3D(1,-1,0), new Vector3D(0,-1,0))},
+                Color.GREEN));
 
         BufferedImage image = raytrace(scene01);
         File outputImage = new File("image.png");
@@ -34,10 +39,12 @@ public class Raytracer {
 
     public static BufferedImage raytrace(Scene scene) {
         Camera mainCamera = scene.getCamera();
+        double[] nearFarPlanes = mainCamera.getNearFarPlanes();
         BufferedImage image = new BufferedImage(mainCamera.getResolutionWidth(), mainCamera.getResolutionHeight(), BufferedImage.TYPE_INT_RGB);
         List<Object3D> objects = scene.getObjects();
         Vector3D[][] posRaytrace = mainCamera.calculatePositionsToRay();
         Vector3D pos = mainCamera.getPosition();
+        double cameraZ = pos.getZ();
 
         for (int i = 0; i < posRaytrace.length; i++) {
             for (int j = 0; j < posRaytrace[i].length; j++) {
@@ -46,7 +53,8 @@ public class Raytracer {
                 double z = posRaytrace[i][j].getZ() + pos.getZ();
 
                 Ray ray = new Ray(mainCamera.getPosition(), new Vector3D(x, y, z));
-                Intersection closestIntersection = raycast(ray, objects, null);
+                Intersection closestIntersection = raycast(ray, objects, null,
+                        new double[]{cameraZ + nearFarPlanes[0], cameraZ + nearFarPlanes[1]});
 
                 Color pixelColor = scene.getDefaultColor();
                 if (closestIntersection != null) {
@@ -59,7 +67,7 @@ public class Raytracer {
         return image;
     }
 
-    public static Intersection raycast(Ray ray, List<Object3D> objects, Object3D caster) {
+    public static Intersection raycast(Ray ray, List<Object3D> objects, Object3D caster, double[] clippingPlanes) {
         Intersection closestIntersection = null;
 
         for (int i = 0; i < objects.size(); i++) {
@@ -68,7 +76,12 @@ public class Raytracer {
                 Intersection intersection = currObj.getIntersection(ray);
                 if (intersection != null) {
                     double distance = intersection.getDistance();
-                    if (distance >= 0 && (closestIntersection == null || distance < closestIntersection.getDistance())) {
+                    double intersectionZ = intersection.getPosition().getZ();
+
+                    if (distance >= 0 &&
+                            (closestIntersection == null || distance < closestIntersection.getDistance()) &&
+                            (clippingPlanes == null || (intersectionZ >= clippingPlanes[0] &&
+                                    intersectionZ <= clippingPlanes[1]))) {
                         closestIntersection = intersection;
                     }
                 }

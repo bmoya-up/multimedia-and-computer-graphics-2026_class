@@ -6,16 +6,20 @@ import edu.up.cg.raytracer.tools.Vector3D;
 
 import java.awt.*;
 
-public class Camera extends Object3D {
+public class Camera  extends Object3D {
     //FOV[0] = Horizontal | FOV[1] = Vertical
     private double[] fieldOfView = new double[2];
     private double defaultZ = 15.0;
     private int[] resolution = new int[2];
+    private double[] nearFarPlanes = new double[2];
 
-    public Camera(Vector3D position, double fovH, double fovV, int width, int height) {
+
+    public Camera(Vector3D position, double fovH, double fovV, int width, int height, double nearPlane, double farPlane) {
         super(position, Color.BLACK);
         setFOV(fovH, fovV);
         setResolution(width, height);
+        setNearFarPlanes(new double[]{nearPlane, farPlane});
+
     }
 
     public double[] getFieldOfView() {
@@ -82,6 +86,14 @@ public class Camera extends Object3D {
 
     private void setResolution(int[] resolution) {
         this.resolution = resolution;
+    }
+
+    public double[] getNearFarPlanes() {
+        return nearFarPlanes;
+    }
+
+    private void setNearFarPlanes(double[] nearFarPlanes) {
+        this.nearFarPlanes = nearFarPlanes;
     }
 
     public Vector3D[][] calculatePositionsToRay() {
