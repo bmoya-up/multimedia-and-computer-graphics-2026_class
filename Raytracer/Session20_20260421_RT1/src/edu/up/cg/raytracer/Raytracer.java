@@ -2,6 +2,7 @@ package edu.up.cg.raytracer;
 
 import edu.up.cg.raytracer.objects.*;
 import edu.up.cg.raytracer.tools.Intersection;
+import edu.up.cg.raytracer.tools.OBJReader;
 import edu.up.cg.raytracer.tools.Ray;
 import edu.up.cg.raytracer.tools.Vector3D;
 
@@ -17,7 +18,10 @@ public class Raytracer {
     public static void main(String[] args) {
         System.out.println(new Date());
         Scene scene01 = new Scene(Color.WHITE);
+
+        // Clipping example
 //        scene01.setCamera(new Camera(new Vector3D(0, 0, -4), 60, 60, 800,800, 9.7, 20.0));
+
         scene01.setCamera(new Camera(new Vector3D(0, 0, -4), 60, 60, 800,800, 0.6, 50.0));
         scene01.addObject(new Sphere(new Vector3D(0.5, 1, 8), 0.8, Color.RED));
         scene01.addObject(new Sphere(new Vector3D(0.1, 1, 6), 0.5, Color.BLUE));
@@ -26,6 +30,7 @@ public class Raytracer {
                         new Triangle(Vector3D.ZERO(), new Vector3D(1, 0, 0), new Vector3D(1,-1,0)),
                         new Triangle(Vector3D.ZERO(), new Vector3D(1,-1,0), new Vector3D(0,-1,0))},
                 Color.GREEN));
+        scene01.addObject(OBJReader.getModel3D("src/edu/up/cg/raytracer/models/SmallTeapot.obj",new Vector3D(0,-2.5,1), Color.CYAN));
 
         BufferedImage image = raytrace(scene01);
         File outputImage = new File("image.png");

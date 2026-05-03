@@ -6,7 +6,7 @@ import edu.up.cg.raytracer.tools.Ray;
 import edu.up.cg.raytracer.tools.Vector3D;
 
 public class Triangle implements IIntersectable {
-    public static final double EPSILON = 0.0000001;
+    public static final double EPSILON = 0.0000000000001;
     private Vector3D[] vertices;
     private Vector3D[] normals;
 
