@@ -28,7 +28,16 @@ public class Triangle implements IIntersectable {
     }
 
     public Vector3D getNormal(){
-        return Vector3D.ZERO();
+        Vector3D normal = Vector3D.ZERO();
+        Vector3D[] normals = getNormals();
+
+        if(normals == null) {
+            Vector3D[] vertices = getVertices();
+            Vector3D v = Vector3D.substract(vertices[1], vertices[0]);
+            Vector3D w = Vector3D.substract(vertices[0], vertices[2]);
+            normal = Vector3D.normalize(Vector3D.crossProduct(v, w));
+        }
+        return normal;
     }
 
     public Vector3D[] getNormals() {

@@ -1,5 +1,6 @@
 package edu.up.cg.raytracer;
 
+import edu.up.cg.raytracer.lights.Light;
 import edu.up.cg.raytracer.objects.Camera;
 import edu.up.cg.raytracer.objects.Object3D;
 
@@ -11,10 +12,12 @@ public class Scene {
     Camera camera;
     List<Object3D> objects;
     Color defaultColor;
+    private List<Light> lights;
 
     public Scene(Color defaultColor) {
         setDefaultColor(defaultColor);
         setObjects(new ArrayList<>());
+        setLights(new ArrayList<>());
     }
 
     public Color getDefaultColor() {
@@ -46,5 +49,20 @@ public class Scene {
 
     public void setObjects(List<Object3D> objects) {
         this.objects = objects;
+    }
+
+    public List<Light> getLights() {
+        if(lights == null){
+            lights = new ArrayList<>();
+        }
+        return lights;
+    }
+
+    public void setLights(List<Light> lights) {
+        this.lights = lights;
+    }
+
+    public void addLight(Light light){
+        getLights().add(light);
     }
 }

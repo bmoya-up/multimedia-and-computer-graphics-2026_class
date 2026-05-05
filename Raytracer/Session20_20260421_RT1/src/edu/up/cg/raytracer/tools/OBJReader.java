@@ -38,15 +38,15 @@ public abstract class OBJReader {
                 } else if (line.startsWith("f ")) {
                     String[] faceComponents = line.split("(\\s)+");
                     List<Integer> faceVertex = new ArrayList<>();
-                    //List<Integer> faceNormals = new ArrayList<>();
+                    List<Integer> faceNormals = new ArrayList<>();
 
                     for (int i = 1; i < faceComponents.length; i++) {
                         String[] infoVertex = faceComponents[i].split("/");
                         if (infoVertex.length >= 3) {
                             int vertexIndex = Integer.parseInt(infoVertex[0]);
-                            //int normalIndex = Integer.parseInt(infoVertex[2]);
+                            int normalIndex = Integer.parseInt(infoVertex[2]);
                             faceVertex.add(vertexIndex);
-                            //faceNormals.add(normalIndex);
+                            faceNormals.add(normalIndex);
                         }
                     }
 
