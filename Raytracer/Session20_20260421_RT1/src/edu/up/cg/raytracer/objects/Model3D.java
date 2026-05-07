@@ -1,5 +1,6 @@
 package edu.up.cg.raytracer.objects;
 
+import edu.up.cg.raytracer.tools.Barycentric;
 import edu.up.cg.raytracer.tools.Intersection;
 import edu.up.cg.raytracer.tools.Ray;
 import edu.up.cg.raytracer.tools.Vector3D;
@@ -51,7 +52,12 @@ public class Model3D extends Object3D {
                     (intersectionDistance < distance || distance < 0)){
                 distance = intersectionDistance;
                 position = Vector3D.add(ray.getOrigin(), Vector3D.scalarMultiplication(ray.getDirection(), distance));
-                normal = triangle.getNormal();
+                normal = Vector3D.ZERO();
+                double[] uVw = Barycentric.CalculateBarycentricCoordinates(position, triangle);
+                Vector3D[] normals = triangle.getNormals();
+                for(int i = 0; i < uVw.length; i++){
+                    normal = Vector3D.add(normal, Vector3D.scalarMultiplication(normals[i], uVw[i]));
+                }
             }
         }
 

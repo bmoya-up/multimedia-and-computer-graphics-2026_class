@@ -25,7 +25,7 @@ public class Raytracer {
 //        scene01.setCamera(new Camera(new Vector3D(0, 0, -4), 60, 60, 800,800, 9.7, 20.0));
 
         scene01.setCamera(new Camera(new Vector3D(0, 0, -4), 60, 60, 800,800, 0.6, 50.0));
-        scene01.addLight(new DirectionalLight(new Vector3D(0.0, 0.0, 1.0), Color.WHITE, 1.0));
+        scene01.addLight(new DirectionalLight(new Vector3D(0.0, 0.0, 1.0), Color.WHITE, 1.1));
         scene01.addObject(new Sphere(new Vector3D(0.5, 1, 8), 0.8, Color.RED));
         scene01.addObject(new Sphere(new Vector3D(0.1, 1, 6), 0.5, Color.BLUE));
         scene01.addObject(new Model3D(new Vector3D(-1, -1, 3),
