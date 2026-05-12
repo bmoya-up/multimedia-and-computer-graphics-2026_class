@@ -2,6 +2,7 @@ package edu.up.cg.raytracer;
 
 import edu.up.cg.raytracer.lights.DirectionalLight;
 import edu.up.cg.raytracer.lights.Light;
+import edu.up.cg.raytracer.lights.PointLight;
 import edu.up.cg.raytracer.objects.*;
 import edu.up.cg.raytracer.tools.Intersection;
 import edu.up.cg.raytracer.tools.OBJReader;
@@ -35,7 +36,25 @@ public class Raytracer {
                 Color.GREEN));
         scene01.addObject(OBJReader.getModel3D("src/edu/up/cg/raytracer/models/SmallTeapot.obj",new Vector3D(0,-2.5,1), Color.CYAN));
 
-        BufferedImage image = raytrace(scene01);
+        // Scene 02
+        Scene scene02 = new Scene(Color.BLACK);
+        scene02.setCamera(new Camera(new Vector3D(0, 0, -4), 60, 60, 800, 800, 0.6, 50.0));
+        scene02.addLight(new PointLight(new Vector3D(0.0, 1.0, 0.4),Color.WHITE, 0.8));
+//        scene02.addLight(new DirectionalLight(new Vector3D(0.0, 0.0, 1.0), Color.WHITE, 0.8));
+//        scene02.addLight(new DirectionalLight(new Vector3D(0.0, -0.1, 0.1), Color.WHITE, 0.2));
+//        scene02.addLight(new DirectionalLight(new Vector3D(-0.2, -0.1, 0.0), Color.WHITE, 0.2));
+        scene02.addObject(new Sphere(new Vector3D(0.0, 1.0, 5.0), 0.5, Color.RED));
+        scene02.addObject(new Sphere(new Vector3D(0.5, 1.0, 4.5), 0.25, new Color(200, 255, 0)));
+        scene02.addObject(new Sphere(new Vector3D(0.35, 1.0, 4.5), 0.3, Color.BLUE));
+        scene02.addObject(new Sphere(new Vector3D(4.85, 1.0, 4.5), 0.3, Color.PINK));
+        scene02.addObject(new Sphere(new Vector3D(2.85, 1.0, 304.5), 0.5, Color.BLUE));
+        scene02.addObject(OBJReader.getModel3D("src/edu/up/cg/raytracer/models/Cube.obj", new Vector3D(0f, -2.5, 1.3), Color.WHITE));
+        scene02.addObject(OBJReader.getModel3D("src/edu/up/cg/raytracer/models/CubeQuad.obj", new Vector3D(-3.0, -2.5, 2.0), Color.GREEN));
+        scene02.addObject(OBJReader.getModel3D("src/edu/up/cg/raytracer/models/SmallTeapot.obj", new Vector3D(2.0, -1.0, 1.5), Color.BLUE));
+        scene02.addObject(OBJReader.getModel3D("src/edu/up/cg/raytracer/models/Ring.obj", new Vector3D(2.0, -1.0, 1.5), Color.BLUE));
+
+
+        BufferedImage image = raytrace(scene02);
         File outputImage = new File("image.png");
         try {
             ImageIO.write(image, "png", outputImage);
